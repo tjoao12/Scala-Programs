@@ -1,3 +1,0 @@
-object FizzBuzz1 {
-
-}
