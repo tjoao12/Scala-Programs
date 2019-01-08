@@ -1,12 +1,7 @@
-object task3 extends App {
-  def task13(a: String, b: String, c: Int) {
-
-    var word = a
-
-    var word2 = b
+object FizzBuzz extends App {
+  def task13(word: String, word2: String, c: Int) {
 
     var amount = 1
-
 
     while (amount <= c) {
 
