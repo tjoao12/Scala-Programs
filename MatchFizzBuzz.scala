@@ -1,4 +1,4 @@
-object task2 extends App {
+object MatchFizzBuzz extends App {
   var number = 1
 
   while (number < 16) {

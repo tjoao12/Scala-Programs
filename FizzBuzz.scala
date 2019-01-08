@@ -1,14 +1,9 @@
-object task3 extends App {
-  def task13(a: String, b: String, c: Int) {
-
-    var word = a
-
-    var word2 = b
+object FizzBuzz extends App {
+  def task13(word: String, word2: String, count: Int) {
 
     var amount = 1
 
-
-    while (amount <= c) {
+    while (amount <= count) {
 
       if ((amount % 3 == 0) & (amount % 5 == 0)) {
 
@@ -42,3 +37,4 @@ object task3 extends App {
 
   task13("Fizz", "Buzz", 50)
 }
+
