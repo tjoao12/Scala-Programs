@@ -13,7 +13,7 @@ object MatchFizzBuzz extends App {
 
       case 15 => println("buzzfizz")
 
-      case _ => ("not in the list")
+      case _ => println("not in the list")
 
     }
 
@@ -21,4 +21,3 @@ object MatchFizzBuzz extends App {
 
   }
 }
-//
