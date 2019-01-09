@@ -5,19 +5,21 @@ object FizzBuzz extends App {
 
     while (amount <= count) {
 
-      if ((amount % 3 == 0) & (amount % 5 == 0)) {
+      val mod3 = amount % 3 == 0
+      val mod5 = amount % 5 == 0
+      if (mod3 & mod5) {
 
         println(word + word2)
 
       }
 
-      else if (amount % 3 == 0) {
+      else if (mod3) {
 
         println(word)
 
       }
 
-      else if (amount % 5 == 0) {
+      else if (mod5) {
 
         println(word2)
 
