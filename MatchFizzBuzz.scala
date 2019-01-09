@@ -1,4 +1,4 @@
-object task2 extends App {
+object MatchFizzBuzz extends App {
   var number = 1
 
   while (number < 16) {
@@ -13,7 +13,7 @@ object task2 extends App {
 
       case 15 => println("buzzfizz")
 
-      case _ => ("not in the list")
+      case _ => println("not in the list")
 
     }
 

@@ -1,13 +1,12 @@
-object task extends App {
+object Iteration extends App {
 
-  def task12(a: String, b: Int) {
+  def task12(word: String, count: Int) {
 
-    var word = a
-    var amount = b
+    var amount = count
 
     while (amount > 0) {
 
-      println(word * b)
+      println(word * count)
 
       amount = amount - 1 // if you want it as a square change the -1 to -2
 
