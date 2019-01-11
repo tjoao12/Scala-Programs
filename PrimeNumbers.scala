@@ -16,24 +16,5 @@ object PrimeNumbers extends App {
   }
 
 }
-  /*println("Please enter your number limit")
-  var num = scala.io.StdIn.readInt()
-  var number = 2
 
-
-  for (i <- 3 to num by 2) {
-    var count = 0
-    while (count < num) {
-      if (i % 2 == 0 && i!=count) {
-        println(count + " is a prime number")
-        count = count + 1
-      }
-      else {
-        println(i + " is not a prime number")
-      }
-      number=count+1
-
-    }
-    println(s"The amount of prime numbers are $count")
-  }*/
 
