@@ -3,55 +3,67 @@ import scala.util.Random
 
 object RockPaperScissors extends App {
 
-  var choices = Array ("Rock", "Paper", "Scissors")
+  firstMenu
+  var choices = Array("Rock", "Paper", "Scissors")
+  var userInput = scala.io.StdIn.readInt
   var computerChoice = (Random.nextInt(choices.length))
-  def startMenu(userInput: Int) {
-    println("Welcome to the Rock, make your selection \nPress 1 for Rock \nPress 2 Paper \nPress 3 Scissors \nAny other key to quit")
-    var userInput = scala.io.StdIn.readInt
-  }
 
-  def user(userInput: Int) {
-    userInput match {
-      case 1 => println("You have chosen Rock")
-      case 2 => println("You have chosen Scissors")
-      case 3 => println("You have chosen Paper")
-      case _ => println("You have quit the game")
-    }
-  }
 
-  def pc(computerChoice: Int) {
-    computerChoice match {
-      case 0 => println("The computer has chosen Rock")
-      case 1 => println("The computer has chosen Scissors")
-      case 2 => println("The computer has chosen Paper")
-    }
-  }
-
-  def options(userInput:Int) {
-    if (userInput == 1) {
-      computerChoice match {
-        case 0 => println("You have drawn")
-        case 1 => println("You have lost")
-        case 2 => println("You have won")
-      }
-    } else if (userInput == 2) {
-      computerChoice match {
-        case 0 => println("You have won")
-        case 1 => println("You have drawn")
-        case 2 => println("You have lost")
+    def firstMenu {
+      println("Press 1 to play or 2 to quit")
+      var firstMenu = scala.io.StdIn.readInt
+      firstMenu match {
+        case 1 => secondMenu2
+        case 2 => sys.exit(0)
       }
     }
 
-    else if (userInput == 3) {
+    def secondMenu2 {
+
+      println("Make your selection Press 1 for Rock, Press 2 for Paper and 3 for Scissors")
+      var secondMenu = scala.io.StdIn.readInt
+      secondMenu match {
+        case 1 => println("You have chosen Rock")
+        case 2 => println("You have chosen Paper")
+        case 3 => println("You have chosen Scissors")
+        case _ => println("Incorrect Key" + sys.exit(0))
+      }
+      pc
+      result(secondMenu)
+      firstMenu
+    }
+
+    def pc {
+
       computerChoice match {
-        case 0 => println("You have lost")
-        case 1 => println("You have won")
-        case 2 => println("You have drawn")
+        case 0 => println("The computer has chosen Rock")
+        case 1 => println("The computer has chosen Scissors")
+        case 2 => println("The computer has chosen Paper")
+      }
+    }
+
+    def result(choice:Int) {
+
+      if (choice == 1) {
+        computerChoice match {
+          case 0 => println("You have drawn")
+          case 1 => println("You have lost")
+          case 2 => println("You have won")
+        }
+      } else if (choice == 2) {
+        computerChoice match {
+          case 0 => println("You have won")
+          case 1 => println("You have drawn")
+          case 2 => println("You have lost")
+        }
+      } else if (choice == 3) {
+        computerChoice match {
+          case 0 => println("You have lost")
+          case 1 => println("You have won")
+          case 2 => println("You have drawn")
+        }
       }
 
     }
-
-  }
-
 }
 
