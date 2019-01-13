@@ -1,45 +1,56 @@
 object MorseCode extends App {
 
-
+  var storage = ""
   def morseCode(word: String) {
-    var count = 0
-    while (count < word.length) {
       word match {
-        case "a" | "A" => println(".-")
-        case "b" | "B" => println("-...")
-        case "c" | "C" => println("-.-.")
-        case "d" | "D" => println("-..")
-        case "e" | "E" => println(".")
-        case "f" | "F" => println("..-.")
-        case "g" | "G" => println("--.")
-        case "h" | "H" => println("....")
-        case "i" | "I" => println("..")
-        case "j" | "J" => println(".---")
-        case "k" | "K" => println("-.-")
-        case "l" | "L" => println(".-..")
-        case "m" | "M" => println("--")
-        case "n" | "N" => println("-.")
-        case "o" | "O" => println("---")
-        case "p" | "P" => println(".--.")
-        case "q" | "Q" => println("--.-")
-        case "r" | "R" => println(".-.")
-        case "s" | "S" => println("...")
-        case "t" | "T" => println("-")
-        case "u" | "U" => println("..-")
-        case "v" | "V" => println("...-")
-        case "w" | "W" => println(".--")
-        case "x" | "X" => println("-..-")
-        case "y" | "Y" => println("-.--")
-        case "z" | "Z" => println("--..")
+        case "a" | "A" => print(".-")
+        case "b" | "B" => print("-...")
+        case "c" | "C" => print("-.-.")
+        case "d" | "D" => print("-..")
+        case "e" | "E" => print(".")
+        case "f" | "F" => print("..-.")
+        case "g" | "G" => print("--.")
+        case "h" | "H" => print("....")
+        case "i" | "I" => print("..")
+        case "j" | "J" => print(".---")
+        case "k" | "K" => print("-.-")
+        case "l" | "L" => print(".-..")
+        case "m" | "M" => print("--")
+        case "n" | "N" => print("-.")
+        case "o" | "O" => print("---")
+        case "p" | "P" => print(".--.")
+        case "q" | "Q" => print("--.-")
+        case "r" | "R" => print(".-.")
+        case "s" | "S" => print("...")
+        case "t" | "T" => print("-")
+        case "u" | "U" => print("..-")
+        case "v" | "V" => print("...-")
+        case "w" | "W" => print(".--")
+        case "x" | "X" => print("-..-")
+        case "y" | "Y" => print("-.--")
+        case "z" | "Z" => print("--..")
+
+        case "0"       => print("-----")
+        case "1"       => print(".----")
+        case "2"       => print("..---")
+        case "3"       => print("...--")
+        case "4"       => print("....-")
+        case "5"       => print("-----")
+        case "6"       => print("-....")
+        case "7"       => print("--...")
+        case "8"       => print("---..")
+        case "9"       => print("----.")
+        case _         => print(" / ")
+
       }
-      count += 1
-      print(word)
+    }
+
+  def wordSplit (count:String){
+
+    for (x<- 0 until count.length){
+      storage += morseCode(count.substring(x,x+1))
     }
   }
-
-    morseCode("joao")
-
-
-
+  wordSplit("he l o lo o")
 }
 
