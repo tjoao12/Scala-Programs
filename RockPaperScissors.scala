@@ -1,5 +1,3 @@
-import HangMan.attempts
-
 import scala.util.Random
 
 object RockPaperScissors extends App {

@@ -1,6 +1,6 @@
 import scala.collection.mutable.ArrayBuffer
 
-object practice extends App {
+object Practice extends App {
 
   val vector = Vector(1, 2, 3) //vectors are immutable
   println(vector)
