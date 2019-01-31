@@ -1,4 +1,3 @@
-
 class Calculator {
 
   def add(firstNr: Int, secondNr: Int): Int = {
