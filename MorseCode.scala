@@ -1,9 +1,11 @@
-object MorseCode extends App {
+package Programs
 
+  object MorseCode extends App {
 
-  def morseCode(word: String) {
-    var count = 0
-    while (count < word.length) {
+    var storage = ""
+
+    def morseCode(word: String) {
+
       word match {
         case "a" | "A" => println(".-")
         case "b" | "B" => println("-...")
@@ -31,15 +33,28 @@ object MorseCode extends App {
         case "x" | "X" => println("-..-")
         case "y" | "Y" => println("-.--")
         case "z" | "Z" => println("--..")
+
+        case "0" => print("-----")
+        case "1" => print(".----")
+        case "2" => print("..---")
+        case "3" => print("...--")
+        case "4" => print("....-")
+        case "5" => print("-----")
+        case "6" => print("-....")
+        case "7" => print("--...")
+        case "8" => print("---..")
+        case "9" => print("----.")
+        case _ => print(" / ")
       }
-      count += 1
-      print(word)
+
     }
-  }
 
-    morseCode("joao")
+    def wordSplit (count:String){
 
-
+      for (x<- 0 until count.length){
+        storage += morseCode(count.substring(x,x+1))
+      }
+    }
+    wordSplit("he l o lo o")
 
 }
-
