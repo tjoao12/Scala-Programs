@@ -1,8 +1,4 @@
-package Programs
-
-import Programs.Hangman.wordGenerator
-
-object Main extends App {
+object OrderingNumWord extends App {
 
   startMenu
 
