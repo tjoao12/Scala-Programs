@@ -1,4 +1,4 @@
-object Main extends App {
+object RecursionChallenges extends App {
 
   var total = 0
 
