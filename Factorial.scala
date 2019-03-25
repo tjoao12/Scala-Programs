@@ -1,19 +1,13 @@
-object Factorial extends App{
-
-
-  def factorial(number: Int) {
-
-    var number1 = number
-    var total = 1
-
-    while (number1 != 1) {
-      total *= number1
-      number1=(number1-1)
-
+object Factorial extends App {
+var total=1
+  
+  def factorial (n: Int){
+    if(n==1){
+      print(total)
+    }else{
+      total=total*n
+        factorial(n-1)
     }
-    println(total)
   }
-
-  factorial(10)
-
+  factorial(5)
 }
