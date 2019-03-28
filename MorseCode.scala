@@ -1,60 +1,39 @@
-package Programs
+object array extends App {
 
-  object MorseCode extends App {
+  var list = List[String](".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..")
+  var list2 = ('a' to 'z').toList
+  var storage = " "
 
-    var storage = ""
 
-    def morseCode(word: String) {
+  startMenu(storage:String, list: List[String], list2:List[Char])
 
-      word match {
-        case "a" | "A" => println(".-")
-        case "b" | "B" => println("-...")
-        case "c" | "C" => println("-.-.")
-        case "d" | "D" => println("-..")
-        case "e" | "E" => println(".")
-        case "f" | "F" => println("..-.")
-        case "g" | "G" => println("--.")
-        case "h" | "H" => println("....")
-        case "i" | "I" => println("..")
-        case "j" | "J" => println(".---")
-        case "k" | "K" => println("-.-")
-        case "l" | "L" => println(".-..")
-        case "m" | "M" => println("--")
-        case "n" | "N" => println("-.")
-        case "o" | "O" => println("---")
-        case "p" | "P" => println(".--.")
-        case "q" | "Q" => println("--.-")
-        case "r" | "R" => println(".-.")
-        case "s" | "S" => println("...")
-        case "t" | "T" => println("-")
-        case "u" | "U" => println("..-")
-        case "v" | "V" => println("...-")
-        case "w" | "W" => println(".--")
-        case "x" | "X" => println("-..-")
-        case "y" | "Y" => println("-.--")
-        case "z" | "Z" => println("--..")
-
-        case "0" => print("-----")
-        case "1" => print(".----")
-        case "2" => print("..---")
-        case "3" => print("...--")
-        case "4" => print("....-")
-        case "5" => print("-----")
-        case "6" => print("-....")
-        case "7" => print("--...")
-        case "8" => print("---..")
-        case "9" => print("----.")
-        case _ => print(" / ")
-      }
-
+  def startMenu(storage:String, list: List[String], list2:List[Char]) {
+    println("This is the Cypher, press (1) to type a sentence or anything else to quit")
+    scala.io.StdIn.readInt match {
+      case 1 => typeWord(storage:String, list: List[String], list2:List[Char])
+      case _ => sys.exit(0)
     }
+  }
+  def typeWord (storage:String, list: List[String], list2:List[Char]) {
 
-    def wordSplit (count:String){
+    println("type in your sentence")
+    var input = scala.io.StdIn.readLine
+    converter(input, storage, list, list2)
+  }
 
-      for (x<- 0 until count.length){
-        storage += morseCode(count.substring(x,x+1))
+  def converter(input: String, storage: String, list: List[String], list2:List[Char]) {
+    var storage = " "
+    for (x <- 0 until input.length) {
+      for (i <- 0 until list2.length) {
+        if (input.substring(x,x+1) == list2(i).toString) {
+          storage+= list(i) + " "
+        }
+      }
+      if (x>0 && storage.substring(x-1,x)!= " " && input.substring(x,x+1)==" ") {
+        storage+= " / "
       }
     }
-    wordSplit("he l o lo o")
-
+    println("The outcome is" + storage)
+    startMenu(storage:String, list: List[String], list2:List[Char])
+  }
 }
