@@ -1,71 +1,53 @@
-class Calculator {
+object calculator extends App {
 
-  def add(firstNr: Int, secondNr: Int): Int = {
-    val total1 = firstNr + secondNr
-    println("the result is " + total1)
-    total1
+  startMenu
+  def startMenu {
+    println("Calculator \n(1)multiply (2)divide (3)subtract (4)add")
+    var option = scala.io.StdIn.readInt
+
+    option match {
+      case 1 => multiply
+      case 2 => divide
+      case 3 => divide
+      case 4 => add
+      case _ => print("you have made a mistake")
+    }
   }
 
-  def substract(firstNr: Int, secondNr: Int): Int = {
-    var total2 = firstNr - secondNr
-    println("the result is " + total2)
-    total2
+  def multiply{
+    println("Type in first number")
+    var num1= readInt
+    println("Type in second number")
+    var num2= readInt
+    var total= num1*num2
+    println(s"The total is: $total")
+    startMenu
   }
-
-  def divide(firstNr: Int, secondNr: Int): Int = {
-    var total3 = firstNr / secondNr
-    println("the result is " + total3)
-    total3
+  def divide{
+    println("Type in first number")
+    var num1= readInt
+    println("Type in second number")
+    var num2= readInt
+    var total= num1/num2
+    println(s"The total is: $total")
+    startMenu
   }
-
-  def multiply(firstNr: Int, secondNr: Int): Int = {
-    var total4 = firstNr * secondNr
-    println("the result is " + total4)
-    total4
+  def subtract{
+    println("Type in first number")
+    var num1= readInt
+    println("Type in second number")
+    var num2= readInt
+    var total= num1-num2
+    println(s"The total is: $total")
+    startMenu
+  }
+  def add{
+    println("Type in first number")
+    var num1= readInt
+    println("Type in second number")
+    var num2= readInt
+    var total= num1+num2
+    println(s"The total is: $total")
+    startMenu
   }
 }
-
-  var selection = new Calculator()
-  var option = 0
-
-  while(option<5) {
-    println("Welcome to the calculator: \npress 1 for adding \npress 2 for subtracting \npress 3 for multiplying \npress 4 for multiplication \npress 5 to exit")
-    var option = scala.io.StdIn.readInt()
-
-    if (option==1) {
-      println("please enter your first number")
-      var firstNr = scala.io.StdIn.readInt()
-      println("please enter your second number")
-      var secondNr = scala.io.StdIn.readInt()
-      selection.add(firstNr,secondNr)
-    }
-
-    if (option==2) {
-      println("please enter your first number")
-      var firstNr = scala.io.StdIn.readInt()
-      println("please enter your second number")
-      var secondNr = scala.io.StdIn.readInt()
-      selection.substract(firstNr,secondNr)
-    }
-
-    if (option==3) {
-      println("please enter your first number")
-      var firstNr = scala.io.StdIn.readInt()
-      println("please enter your second number")
-      var secondNr = scala.io.StdIn.readInt()
-      selection.divide(firstNr,secondNr)
-    }
-
-    if (option==4) {
-      println("please enter your first number")
-      var firstNr = scala.io.StdIn.readInt()
-      println("please enter your second number")
-      var secondNr = scala.io.StdIn.readInt()
-      selection.multiply(firstNr,secondNr)
-    }
-    
-    if (option==5) {
-        println("Thanks for using my calculator")
-        sys.exit(0)
-    }
-  }
