@@ -10,7 +10,7 @@ object Hangman extends App {
 
   def startScreen {
 
-    var stringArray = Array[String]("resolute", "brainy", "ahead", "conscious", "aback", "animated", "servant", "stuff", "yard", "unsuitable", "interesting", "uninterested", "majestic", "splendid", "doubtful", "red", "lame", "grape", "punishment", "head", "deeply", "evasive", "rejoice", "mate", "hilarious", "juggle", "economic", "dust", "notice", "gaze")
+    var stringArray = List[String]("resolute", "brainy", "ahead", "conscious", "aback", "animated", "servant", "stuff", "yard", "unsuitable", "interesting", "uninterested", "majestic", "splendid", "doubtful", "red", "lame", "grape", "punishment", "head", "deeply", "evasive", "rejoice", "mate", "hilarious", "juggle", "economic", "dust", "notice", "gaze")
     var string = stringArray(Random.nextInt(stringArray.length-1))
     var string2 = string.toArray
 
